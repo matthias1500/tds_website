@@ -1,0 +1,312 @@
+:root {
+    --background-color: #e6ebf5;
+    --graphics-background-color: #e1f2e6;
+    --start-color: #2bb555;
+    --stop-color: #f0796c;
+    --reset-color: #8dadf2;
+    --scenario-color: #dbcf5e;
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url(fonts/NotoSans-Regular.woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url(fonts/NotoSans-Bold.woff2);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url(fonts/NotoSans-Italic.woff2);
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url(fonts/NotoSans-BoldItalic.woff2);
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(fonts/quicksand-400-normal.woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(fonts/quicksand-500-normal.woff2);
+    font-weight: 500;
+    font-style: normal;
+}
+
+/*
+@font-face {
+    font-family: "Quicksand";
+    src: url(fonts/quicksand-600-normal.woff2);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(fonts/quicksand-700-normal.woff2);
+    font-weight: bold;
+    font-style: normal;
+}
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    font-family: "Noto Sans", Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+main {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 900px;
+}
+
+h1 {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0;
+    font-family: "Quicksand", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+    color: #202020;
+}
+
+#simulation-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media only screen and (max-width: 840px) {
+    #simulation-content {
+        height: 710px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+#road-graphic_large {
+    display: initial;
+}
+
+#road-graphic_small {
+    display: none;
+}
+
+@media only screen and (max-width: 550px) {
+    #road-graphic_large {
+        display: none;
+    }
+
+    #road-graphic_small {
+        display: initial;
+    }
+}
+
+#graphics-box {
+    background-color: var(--graphics-background-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    margin: 0;
+    padding: 0;
+}
+
+#graphic-container {
+    position: relative;
+    margin: 10px;
+    padding: 0;
+}
+
+#settings {
+    margin: 0;
+    padding: 15px;
+    width: 320px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d8dee8;
+    border: 1px solid #b3bac7;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #202020;
+}
+
+#start-reset-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#start-stop-button, #reset-button, #scenario-1 {
+    margin-bottom: 20px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#start-stop-button:active, #reset-button:active, #scenario-1:active {
+    border: 1px solid #202020;
+}
+
+#start-stop-button {
+    background-color: var(--start-color);
+}
+
+#reset-button {
+    background-color: var(--reset-color);
+}
+
+#scenario-1 {
+    width: 220px;
+    background-color: var(--scenario-color);
+}
+
+.slider-container {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+}
+
+.slider-box {
+    width: 100%;
+    margin: 4px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-unit {
+    width: 40px;
+    text-align: left;
+}
+
+.slider-value {
+    width: 30px;
+    text-align: right;
+}
+
+#settings input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 220px;
+    height: 10px;
+    background: #b3bac7;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#settings input[type=range]:disabled {
+    cursor: initial;
+}
+
+#settings input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    border-radius: 50%;
+    background: #343f63;
+    cursor: pointer;
+}
+
+#settings input[type=range]:disabled::-webkit-slider-thumb {
+    background: #b3bac7;
+    cursor: initial;
+}
+
+#settings input[type=range]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border: 0;
+    border-radius: 50%;
+    background: #343f63;
+    cursor: pointer;
+}
+
+#settings input[type=range]:disabled::-moz-range-thumb {
+    background: #b3bac7;
+    cursor: initial;
+}
+
+#road-graphic {
+    margin: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.car-graphic {
+    margin: 0;
+    position: absolute;
+    left: 157px;
+    top: 10px;
+    /* transition: left 0.025s linear, top 0.025s linear, rotate 0.025s linear; */
+}
+
+#site-text {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+}
+
+#site-text h2 {
+    margin: 0;
+    padding: 20px 0;
+    width: 100%;
+    text-align: right;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    color: #909090;
+}
+
+#site-text p {
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: #202020;
+}
