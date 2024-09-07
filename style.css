@@ -76,14 +76,14 @@ body, html {
 
 main {
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 15px 20px 15px;
     max-width: 900px;
 }
 
 h1 {
     width: 100%;
     margin: 0;
-    padding: 40px 0;
+    padding: 30px 0;
     font-family: "Quicksand", Helvetica, sans-serif;
     text-align: center;
     font-size: 34px;
@@ -169,7 +169,6 @@ h1 {
 }
 
 #start-stop-button, #reset-button, #scenario-1 {
-    margin-bottom: 20px;
     width: 150px;
     height: 30px;
     border: 1px solid #c0c0c0;
@@ -178,6 +177,14 @@ h1 {
     color: #000000;
     font-weight: bold;
     cursor: pointer;
+}
+
+#start-stop-button, #reset-button {
+    margin-bottom: 10px;
+}
+
+#scenario-1 {
+    margin-bottom: 20px;
 }
 
 #start-stop-button:active, #reset-button:active, #scenario-1:active {
